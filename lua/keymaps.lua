@@ -19,4 +19,4 @@ vim.keymap.set('n', "<leader>fb", ":Telescope buffers<cr>", {noremap = true})
 vim.keymap.set('n', "<leader>fh", ":Telescope help_tags<cr>", {noremap = true})
 vim.keymap.set('n', "<leader>fm", ":Telescope man_pages<cr>", {noremap = true})
 
-vim.keymap.set('n', "<leader>e", ":NvimTreeToggle<CR>", {noremap = true})
+vim.keymap.set('n', "<leader>e", ":Telescope file_browser<CR>", {noremap = true})
