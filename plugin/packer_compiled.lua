@@ -74,8 +74,43 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\nF\0\0\3\0\4\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vclangd\14lspconfig\frequire\0" },
+    config = { "\27LJ\2\n-\0\1\4\1\2\0\5-\1\0\0009\1\0\0019\3\1\0B\1\2\1K\0\1\0\3À\tbody\15lsp_expandš\1\0\1\3\2\4\0\21-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\v€-\1\1\0009\1\2\1B\1\1\2\15\0\1\0X\2\4€-\1\1\0009\1\3\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\19expand_or_jump\23expand_or_jumpable\21select_next_item\fvisibleŽ\1\0\1\4\2\4\0\23-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\r€-\1\1\0009\1\2\1)\3ÿÿB\1\2\2\15\0\1\0X\2\5€-\1\1\0009\1\3\1)\3ÿÿB\1\2\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\tjump\rjumpable\21select_prev_item\fvisibleª\5\1\0\15\0)\0V6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\5\0B\0\1\0026\1\0\0'\3\1\0B\1\2\0025\2\6\0006\3\a\0\18\5\2\0B\3\2\4X\6\5€8\b\a\0019\b\3\b5\n\b\0=\0\t\nB\b\2\1E\6\3\3R\6ù\1276\3\0\0'\5\n\0B\3\2\0026\4\0\0'\6\v\0B\4\2\0029\5\3\0045\a\15\0005\b\r\0003\t\f\0=\t\14\b=\b\16\a9\b\17\0049\b\18\b9\b\19\b5\n\21\0009\v\17\0049\v\20\v)\rüÿB\v\2\2=\v\22\n9\v\17\0049\v\20\v)\r\4\0B\v\2\2=\v\23\n9\v\17\0049\v\24\vB\v\1\2=\v\25\n9\v\17\0049\v\26\v5\r\29\0009\14\27\0049\14\28\14=\14\30\rB\v\2\2=\v\31\n9\v\17\0043\r \0005\14!\0B\v\3\2=\v\"\n9\v\17\0043\r#\0005\14$\0B\v\3\2=\v%\nB\b\2\2=\b\17\a4\b\3\0005\t&\0>\t\1\b5\t'\0>\t\2\b=\b(\aB\5\2\0012\0\0€K\0\1\0\fsources\1\0\1\tname\fluasnip\1\0\1\tname\rnvim_lsp\f<S-Tab>\1\3\0\0\6i\6s\0\n<Tab>\1\3\0\0\6i\6s\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\14<C-Space>\rcomplete\n<C-d>\n<C-u>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\bcmp\fluasnip\17capabilities\1\0\0\vipairs\1\2\0\0\vclangd\25default_capabilities\17cmp_nvim_lsp\nsetup\vclangd\14lspconfig\frequire\0" },
     loaded = true,
     path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
@@ -124,7 +159,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\14direction\nfloat\17open_mapping\14<leader>t\14autochdir\2\nsetup\15toggleterm\frequire\0" },
+    config = { "\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17open_mapping\14<leader>t\14autochdir\2\14direction\nfloat\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
@@ -139,7 +174,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\nF\0\0\3\0\4\0\b6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vclangd\14lspconfig\frequire\0", "config", "nvim-lspconfig")
+try_loadstring("\27LJ\2\n-\0\1\4\1\2\0\5-\1\0\0009\1\0\0019\3\1\0B\1\2\1K\0\1\0\3À\tbody\15lsp_expandš\1\0\1\3\2\4\0\21-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\v€-\1\1\0009\1\2\1B\1\1\2\15\0\1\0X\2\4€-\1\1\0009\1\3\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\19expand_or_jump\23expand_or_jumpable\21select_next_item\fvisibleŽ\1\0\1\4\2\4\0\23-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\r€-\1\1\0009\1\2\1)\3ÿÿB\1\2\2\15\0\1\0X\2\5€-\1\1\0009\1\3\1)\3ÿÿB\1\2\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\tjump\rjumpable\21select_prev_item\fvisibleª\5\1\0\15\0)\0V6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\5\0B\0\1\0026\1\0\0'\3\1\0B\1\2\0025\2\6\0006\3\a\0\18\5\2\0B\3\2\4X\6\5€8\b\a\0019\b\3\b5\n\b\0=\0\t\nB\b\2\1E\6\3\3R\6ù\1276\3\0\0'\5\n\0B\3\2\0026\4\0\0'\6\v\0B\4\2\0029\5\3\0045\a\15\0005\b\r\0003\t\f\0=\t\14\b=\b\16\a9\b\17\0049\b\18\b9\b\19\b5\n\21\0009\v\17\0049\v\20\v)\rüÿB\v\2\2=\v\22\n9\v\17\0049\v\20\v)\r\4\0B\v\2\2=\v\23\n9\v\17\0049\v\24\vB\v\1\2=\v\25\n9\v\17\0049\v\26\v5\r\29\0009\14\27\0049\14\28\14=\14\30\rB\v\2\2=\v\31\n9\v\17\0043\r \0005\14!\0B\v\3\2=\v\"\n9\v\17\0043\r#\0005\14$\0B\v\3\2=\v%\nB\b\2\2=\b\17\a4\b\3\0005\t&\0>\t\1\b5\t'\0>\t\2\b=\b(\aB\5\2\0012\0\0€K\0\1\0\fsources\1\0\1\tname\fluasnip\1\0\1\tname\rnvim_lsp\f<S-Tab>\1\3\0\0\6i\6s\0\n<Tab>\1\3\0\0\6i\6s\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\14<C-Space>\rcomplete\n<C-d>\n<C-u>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\bcmp\fluasnip\17capabilities\1\0\0\vipairs\1\2\0\0\vclangd\25default_capabilities\17cmp_nvim_lsp\nsetup\vclangd\14lspconfig\frequire\0", "config", "nvim-lspconfig")
 time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
@@ -155,7 +190,7 @@ try_loadstring("\27LJ\2\n¶\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\
 time([[Config for nvim-treesitter]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\14direction\nfloat\17open_mapping\14<leader>t\14autochdir\2\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+try_loadstring("\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17open_mapping\14<leader>t\14autochdir\2\14direction\nfloat\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
 
 _G._packer.inside_compile = false
