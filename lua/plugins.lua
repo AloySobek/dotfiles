@@ -1,6 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+return require("packer").startup(function(use)
     use {
         "wbthomason/packer.nvim"
     }
@@ -8,13 +8,13 @@ return require('packer').startup(function(use)
     use {
         "nvim-treesitter/nvim-treesitter",
         config = function()
-            require'nvim-treesitter.configs'.setup {
+            require"nvim-treesitter.configs".setup {
               highlight = {
                 enable = true
               }
             }
 
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
 
             ts_update()
         end
@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 
     use {
         "nvim-telescope/telescope.nvim",
-        tag = '0.1.2',
+        tag = "0.1.2",
         requires = {{
                 "nvim-lua/plenary.nvim"
             }, {
@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
         config = function()
             local actions = require "telescope.actions"
 
-            require('telescope').setup{
+            require("telescope").setup{
               defaults = {
                 mappings = {
                   i = {
@@ -100,7 +100,7 @@ return require('packer').startup(function(use)
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            local lspconfig = require('lspconfig')
+            local lspconfig = require("lspconfig")
 
             local servers = { "clangd" }
 
@@ -110,9 +110,9 @@ return require('packer').startup(function(use)
               }
             end
 
-            local luasnip = require 'luasnip'
+            local luasnip = require "luasnip"
 
-            local cmp = require 'cmp'
+            local cmp = require "cmp"
             
             cmp.setup {
               snippet = {
@@ -121,15 +121,15 @@ return require('packer').startup(function(use)
                 end,
               },
               mapping = cmp.mapping.preset.insert({
-                ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
-                ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+                ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
+                ["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
                 -- C-b (back) C-f (forward) for snippet placeholder navigation.
-                ['<C-Space>'] = cmp.mapping.complete(),
-                ['<CR>'] = cmp.mapping.confirm {
+                ["<C-Space>"] = cmp.mapping.complete(),
+                ["<CR>"] = cmp.mapping.confirm {
                   behavior = cmp.ConfirmBehavior.Replace,
                   select = true,
                 },
-                ['<Tab>'] = cmp.mapping(function(fallback)
+                ["<Tab>"] = cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_next_item()
                   elseif luasnip.expand_or_jumpable() then
@@ -138,7 +138,7 @@ return require('packer').startup(function(use)
                     fallback()
                   end
                 end, { 'i', 's' }),
-                ['<S-Tab>'] = cmp.mapping(function(fallback)
+                ["<S-Tab>"] = cmp.mapping(function(fallback)
                   if cmp.visible() then
                     cmp.select_prev_item()
                   elseif luasnip.jumpable(-1) then
@@ -149,8 +149,8 @@ return require('packer').startup(function(use)
                 end, { 'i', 's' }),
               }),
               sources = {
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
               },
             }
         end
@@ -161,6 +161,13 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "navarasu/onedark.nvim"
+        "navarasu/onedark.nvim",
+        config = function()
+            require("onedark").setup {
+                style = "dark"
+            }
+
+            require("onedark").load()
+        end
     }
 end)

@@ -110,7 +110,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
-    config = { "\27LJ\2\n-\0\1\4\1\2\0\5-\1\0\0009\1\0\0019\3\1\0B\1\2\1K\0\1\0\3À\tbody\15lsp_expandš\1\0\1\3\2\4\0\21-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\v€-\1\1\0009\1\2\1B\1\1\2\15\0\1\0X\2\4€-\1\1\0009\1\3\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\19expand_or_jump\23expand_or_jumpable\21select_next_item\fvisibleŽ\1\0\1\4\2\4\0\23-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\r€-\1\1\0009\1\2\1)\3ÿÿB\1\2\2\15\0\1\0X\2\5€-\1\1\0009\1\3\1)\3ÿÿB\1\2\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\tjump\rjumpable\21select_prev_item\fvisibleª\5\1\0\15\0)\0V6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\5\0B\0\1\0026\1\0\0'\3\1\0B\1\2\0025\2\6\0006\3\a\0\18\5\2\0B\3\2\4X\6\5€8\b\a\0019\b\3\b5\n\b\0=\0\t\nB\b\2\1E\6\3\3R\6ù\1276\3\0\0'\5\n\0B\3\2\0026\4\0\0'\6\v\0B\4\2\0029\5\3\0045\a\15\0005\b\r\0003\t\f\0=\t\14\b=\b\16\a9\b\17\0049\b\18\b9\b\19\b5\n\21\0009\v\17\0049\v\20\v)\rüÿB\v\2\2=\v\22\n9\v\17\0049\v\20\v)\r\4\0B\v\2\2=\v\23\n9\v\17\0049\v\24\vB\v\1\2=\v\25\n9\v\17\0049\v\26\v5\r\29\0009\14\27\0049\14\28\14=\14\30\rB\v\2\2=\v\31\n9\v\17\0043\r \0005\14!\0B\v\3\2=\v\"\n9\v\17\0043\r#\0005\14$\0B\v\3\2=\v%\nB\b\2\2=\b\17\a4\b\3\0005\t&\0>\t\1\b5\t'\0>\t\2\b=\b(\aB\5\2\0012\0\0€K\0\1\0\fsources\1\0\1\tname\fluasnip\1\0\1\tname\rnvim_lsp\f<S-Tab>\1\3\0\0\6i\6s\0\n<Tab>\1\3\0\0\6i\6s\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\14<C-Space>\rcomplete\n<C-d>\n<C-u>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\bcmp\fluasnip\17capabilities\1\0\0\vipairs\1\2\0\0\vclangd\25default_capabilities\17cmp_nvim_lsp\nsetup\vclangd\14lspconfig\frequire\0" },
+    config = { "\27LJ\2\n-\0\1\4\1\2\0\5-\1\0\0009\1\0\0019\3\1\0B\1\2\1K\0\1\0\3À\tbody\15lsp_expandš\1\0\1\3\2\4\0\21-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\v€-\1\1\0009\1\2\1B\1\1\2\15\0\1\0X\2\4€-\1\1\0009\1\3\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\19expand_or_jump\23expand_or_jumpable\21select_next_item\fvisibleŽ\1\0\1\4\2\4\0\23-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\r€-\1\1\0009\1\2\1)\3ÿÿB\1\2\2\15\0\1\0X\2\5€-\1\1\0009\1\3\1)\3ÿÿB\1\2\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\tjump\rjumpable\21select_prev_item\fvisible‡\5\1\0\15\0(\0O6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0026\1\0\0'\3\3\0B\1\2\0025\2\4\0006\3\5\0\18\5\2\0B\3\2\4X\6\5€8\b\a\0019\b\6\b5\n\a\0=\0\b\nB\b\2\1E\6\3\3R\6ù\1276\3\0\0'\5\t\0B\3\2\0026\4\0\0'\6\n\0B\4\2\0029\5\6\0045\a\14\0005\b\f\0003\t\v\0=\t\r\b=\b\15\a9\b\16\0049\b\17\b9\b\18\b5\n\20\0009\v\16\0049\v\19\v)\rüÿB\v\2\2=\v\21\n9\v\16\0049\v\19\v)\r\4\0B\v\2\2=\v\22\n9\v\16\0049\v\23\vB\v\1\2=\v\24\n9\v\16\0049\v\25\v5\r\28\0009\14\26\0049\14\27\14=\14\29\rB\v\2\2=\v\30\n9\v\16\0043\r\31\0005\14 \0B\v\3\2=\v!\n9\v\16\0043\r\"\0005\14#\0B\v\3\2=\v$\nB\b\2\2=\b\16\a4\b\3\0005\t%\0>\t\1\b5\t&\0>\t\2\b=\b'\aB\5\2\0012\0\0€K\0\1\0\fsources\1\0\1\tname\fluasnip\1\0\1\tname\rnvim_lsp\f<S-Tab>\1\3\0\0\6i\6s\0\n<Tab>\1\3\0\0\6i\6s\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\14<C-Space>\rcomplete\n<C-d>\n<C-u>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\bcmp\fluasnip\17capabilities\1\0\0\nsetup\vipairs\1\2\0\0\vclangd\14lspconfig\25default_capabilities\17cmp_nvim_lsp\frequire\0" },
     loaded = true,
     path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
@@ -127,6 +127,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
+    config = { "\27LJ\2\n`\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\tload\1\0\1\nstyle\tdark\nsetup\fonedark\frequire\0" },
     loaded = true,
     path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
@@ -159,7 +160,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["toggleterm.nvim"] = {
-    config = { "\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17open_mapping\14<leader>t\14autochdir\2\14direction\nfloat\nsetup\15toggleterm\frequire\0" },
+    config = { "\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\14autochdir\2\17open_mapping\14<leader>t\14direction\nfloat\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "/Users/aloysobek/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
@@ -172,26 +173,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\2\n-\0\1\4\1\2\0\5-\1\0\0009\1\0\0019\3\1\0B\1\2\1K\0\1\0\3À\tbody\15lsp_expandš\1\0\1\3\2\4\0\21-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\v€-\1\1\0009\1\2\1B\1\1\2\15\0\1\0X\2\4€-\1\1\0009\1\3\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\19expand_or_jump\23expand_or_jumpable\21select_next_item\fvisibleŽ\1\0\1\4\2\4\0\23-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\r€-\1\1\0009\1\2\1)\3ÿÿB\1\2\2\15\0\1\0X\2\5€-\1\1\0009\1\3\1)\3ÿÿB\1\2\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\tjump\rjumpable\21select_prev_item\fvisibleª\5\1\0\15\0)\0V6\0\0\0'\2\1\0B\0\2\0029\0\2\0009\0\3\0004\2\0\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\5\0B\0\1\0026\1\0\0'\3\1\0B\1\2\0025\2\6\0006\3\a\0\18\5\2\0B\3\2\4X\6\5€8\b\a\0019\b\3\b5\n\b\0=\0\t\nB\b\2\1E\6\3\3R\6ù\1276\3\0\0'\5\n\0B\3\2\0026\4\0\0'\6\v\0B\4\2\0029\5\3\0045\a\15\0005\b\r\0003\t\f\0=\t\14\b=\b\16\a9\b\17\0049\b\18\b9\b\19\b5\n\21\0009\v\17\0049\v\20\v)\rüÿB\v\2\2=\v\22\n9\v\17\0049\v\20\v)\r\4\0B\v\2\2=\v\23\n9\v\17\0049\v\24\vB\v\1\2=\v\25\n9\v\17\0049\v\26\v5\r\29\0009\14\27\0049\14\28\14=\14\30\rB\v\2\2=\v\31\n9\v\17\0043\r \0005\14!\0B\v\3\2=\v\"\n9\v\17\0043\r#\0005\14$\0B\v\3\2=\v%\nB\b\2\2=\b\17\a4\b\3\0005\t&\0>\t\1\b5\t'\0>\t\2\b=\b(\aB\5\2\0012\0\0€K\0\1\0\fsources\1\0\1\tname\fluasnip\1\0\1\tname\rnvim_lsp\f<S-Tab>\1\3\0\0\6i\6s\0\n<Tab>\1\3\0\0\6i\6s\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\14<C-Space>\rcomplete\n<C-d>\n<C-u>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\bcmp\fluasnip\17capabilities\1\0\0\vipairs\1\2\0\0\vclangd\25default_capabilities\17cmp_nvim_lsp\nsetup\vclangd\14lspconfig\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\n \2\0\0\b\0\20\0\0306\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\1\3\0015\3\18\0005\4\16\0005\5\b\0005\6\5\0009\a\4\0=\a\6\0069\a\4\0=\a\a\6=\6\t\0055\6\n\0009\a\4\0=\a\6\0069\a\4\0=\a\a\0069\a\v\0=\a\f\0069\a\r\0=\a\14\6=\6\15\5=\5\17\4=\4\19\3B\1\2\1K\0\1\0\rdefaults\1\0\0\rmappings\1\0\0\6n\15<leader>oh\22select_horizontal\15<leader>ov\20select_vertical\1\0\0\6i\1\0\0\14<leader>e\14<leader>f\1\0\0\nclose\nsetup\14telescope\22telescope.actions\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
--- Config for: telescope-file-browser.nvim
-time([[Config for telescope-file-browser.nvim]], true)
-try_loadstring("\27LJ\2\n¡\1\0\0\5\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\b\0'\2\5\0B\0\2\1K\0\1\0\19load_extension\15extensions\1\0\0\17file_browser\1\0\0\1\0\1\17hijack_netrw\2\nsetup\14telescope\frequire\0", "config", "telescope-file-browser.nvim")
-time([[Config for telescope-file-browser.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\n¶\1\0\0\4\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\a\0005\2\b\0B\0\2\2\18\1\0\0B\1\1\1K\0\1\0\1\0\1\14with_sync\2\vupdate\28nvim-treesitter.install\14highlight\1\0\0\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: telescope-file-browser.nvim
+time([[Config for telescope-file-browser.nvim]], true)
+try_loadstring("\27LJ\2\n¡\1\0\0\5\0\t\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\b\0'\2\5\0B\0\2\1K\0\1\0\19load_extension\15extensions\1\0\0\17file_browser\1\0\0\1\0\1\17hijack_netrw\2\nsetup\14telescope\frequire\0", "config", "telescope-file-browser.nvim")
+time([[Config for telescope-file-browser.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17open_mapping\14<leader>t\14autochdir\2\14direction\nfloat\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+try_loadstring("\27LJ\2\nq\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\14autochdir\2\17open_mapping\14<leader>t\14direction\nfloat\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\2\n-\0\1\4\1\2\0\5-\1\0\0009\1\0\0019\3\1\0B\1\2\1K\0\1\0\3À\tbody\15lsp_expandš\1\0\1\3\2\4\0\21-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\v€-\1\1\0009\1\2\1B\1\1\2\15\0\1\0X\2\4€-\1\1\0009\1\3\1B\1\1\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\19expand_or_jump\23expand_or_jumpable\21select_next_item\fvisibleŽ\1\0\1\4\2\4\0\23-\1\0\0009\1\0\1B\1\1\2\15\0\1\0X\2\4€-\1\0\0009\1\1\1B\1\1\1X\1\r€-\1\1\0009\1\2\1)\3ÿÿB\1\2\2\15\0\1\0X\2\5€-\1\1\0009\1\3\1)\3ÿÿB\1\2\1X\1\2€\18\1\0\0B\1\1\1K\0\1\0\4À\3À\tjump\rjumpable\21select_prev_item\fvisible‡\5\1\0\15\0(\0O6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0026\1\0\0'\3\3\0B\1\2\0025\2\4\0006\3\5\0\18\5\2\0B\3\2\4X\6\5€8\b\a\0019\b\6\b5\n\a\0=\0\b\nB\b\2\1E\6\3\3R\6ù\1276\3\0\0'\5\t\0B\3\2\0026\4\0\0'\6\n\0B\4\2\0029\5\6\0045\a\14\0005\b\f\0003\t\v\0=\t\r\b=\b\15\a9\b\16\0049\b\17\b9\b\18\b5\n\20\0009\v\16\0049\v\19\v)\rüÿB\v\2\2=\v\21\n9\v\16\0049\v\19\v)\r\4\0B\v\2\2=\v\22\n9\v\16\0049\v\23\vB\v\1\2=\v\24\n9\v\16\0049\v\25\v5\r\28\0009\14\26\0049\14\27\14=\14\29\rB\v\2\2=\v\30\n9\v\16\0043\r\31\0005\14 \0B\v\3\2=\v!\n9\v\16\0043\r\"\0005\14#\0B\v\3\2=\v$\nB\b\2\2=\b\16\a4\b\3\0005\t%\0>\t\1\b5\t&\0>\t\2\b=\b'\aB\5\2\0012\0\0€K\0\1\0\fsources\1\0\1\tname\fluasnip\1\0\1\tname\rnvim_lsp\f<S-Tab>\1\3\0\0\6i\6s\0\n<Tab>\1\3\0\0\6i\6s\0\t<CR>\rbehavior\1\0\1\vselect\2\fReplace\20ConfirmBehavior\fconfirm\14<C-Space>\rcomplete\n<C-d>\n<C-u>\1\0\0\16scroll_docs\vinsert\vpreset\fmapping\fsnippet\1\0\0\vexpand\1\0\0\0\bcmp\fluasnip\17capabilities\1\0\0\nsetup\vipairs\1\2\0\0\vclangd\14lspconfig\25default_capabilities\17cmp_nvim_lsp\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: onedark.nvim
+time([[Config for onedark.nvim]], true)
+try_loadstring("\27LJ\2\n`\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\4\0B\0\1\1K\0\1\0\tload\1\0\1\nstyle\tdark\nsetup\fonedark\frequire\0", "config", "onedark.nvim")
+time([[Config for onedark.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
