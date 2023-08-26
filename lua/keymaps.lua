@@ -20,3 +20,5 @@ vim.keymap.set('n', "<leader>fh", ":Telescope help_tags<cr>", {noremap = true})
 vim.keymap.set('n', "<leader>fm", ":Telescope man_pages<cr>", {noremap = true})
 
 vim.keymap.set('n', "<leader>e", ":Telescope file_browser<CR>", {noremap = true})
+
+vim.keymap.set('n', "<leader>r", ":%s/\\<<C-r><C-w>\\>//g<left><left>", {noremap = true})

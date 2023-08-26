@@ -9,5 +9,5 @@ vim.opt.splitright = true
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.spell = true
-vim.opt.spelllang = 'en_us'
+vim.opt.spelllang = "en_us"
 vim.opt.signcolumn = "yes"
