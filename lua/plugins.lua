@@ -102,7 +102,7 @@ return require("packer").startup(function(use)
 
             local lspconfig = require("lspconfig")
 
-            local servers = { "clangd", "cmake" }
+            local servers = { "clangd", "cmake", "pylsp" }
 
             for _, lsp in ipairs(servers) do
               lspconfig[lsp].setup {
