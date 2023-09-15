@@ -1,4 +1,4 @@
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -11,3 +11,8 @@ vim.opt.showmode = false
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 vim.opt.signcolumn = "yes"
+vim.opt.undofile = true
+vim.opt.undodir = vim.env.HOME .. "/.vim/undodir"
+vim.opt.undolevels = 2048
+vim.opt.undoreload = 16384
+vim.cmd("highlight clear SignColumn")
