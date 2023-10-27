@@ -15,4 +15,5 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.env.HOME .. "/.vim/undodir"
 vim.opt.undolevels = 2048
 vim.opt.undoreload = 16384
+vim.opt.wrap = false
 vim.cmd("highlight clear SignColumn")

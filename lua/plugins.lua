@@ -9,7 +9,7 @@ return require("packer").startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require "nvim-treesitter.configs".setup {
-                ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python" },
+                ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python", "ocaml" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
@@ -153,10 +153,11 @@ return require("packer").startup(function(use)
                 require("cmp_nvim_lsp").default_capabilities()
             )
 
-            lspconfig.clangd.setup({});
-            lspconfig.cmake.setup({});
-            lspconfig.pylsp.setup({});
+            lspconfig.clangd.setup({})
+            lspconfig.cmake.setup({})
+            lspconfig.pylsp.setup({})
             lspconfig.lua_ls.setup({})
+            lspconfig.ocamllsp.setup({})
 
             require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -265,15 +266,10 @@ return require("packer").startup(function(use)
         end
     }
 
-    use({
-        "jackMort/ChatGPT.nvim",
-        config = function()
-            require("chatgpt").setup()
-        end,
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
-    })
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = function()
+            vim.fn["mkdp#util#install"]()
+        end
+    }
 end)
