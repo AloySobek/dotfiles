@@ -111,7 +111,7 @@ return require("packer").startup(function(use)
                     -- Jump to the definition
                     bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
 
-                    -- Jump to declaratio
+                    -- Jump to declaration
                     bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
 
                     -- Lists all the implementations for the symbol under the cursor
@@ -263,13 +263,6 @@ return require("packer").startup(function(use)
 
         config = function()
             vim.cmd("colorscheme nightfox")
-        end
-    }
-
-    use {
-        "iamcco/markdown-preview.nvim",
-        run = function()
-            vim.fn["mkdp#util#install"]()
         end
     }
 end)
