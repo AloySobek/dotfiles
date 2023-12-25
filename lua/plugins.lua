@@ -9,7 +9,7 @@ return require("packer").startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require "nvim-treesitter.configs".setup {
-                ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query", "python", "ocaml" },
+                ensure_installed = { "c", "cpp", "lua", "ocaml", "vim", "vimdoc" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
@@ -262,7 +262,7 @@ return require("packer").startup(function(use)
         "EdenEast/nightfox.nvim",
 
         config = function()
-            vim.cmd("colorscheme nightfox")
+            vim.cmd("colorscheme carbonfox")
         end
     }
 end)
