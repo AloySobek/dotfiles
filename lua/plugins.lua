@@ -1,48 +1,64 @@
-vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-return require("packer").startup(function(use)
-    use {
-        "wbthomason/packer.nvim"
-    }
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
 
-    use {
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+    {
         "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
         config = function()
-            require "nvim-treesitter.configs".setup {
-                ensure_installed = { "c", "cpp", "lua", "ocaml", "vim", "vimdoc" },
+            require "nvim-treesitter.configs".setup({
+                ensure_installed = { "c", "lua", "query", "vim", "vimdoc", "cpp", "ocaml" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 }
-            }
+            })
         end
-    }
-
-    use {
+    },
+    {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.2",
-        requires = { {
-            "nvim-lua/plenary.nvim"
-        }, {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            run =
-            "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
-        }, {
+        tag = "0.1.5",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build =
+                "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+            },
             "nvim-tree/nvim-web-devicons"
-        }
         },
         config = function()
             local actions = require "telescope.actions"
 
-            require("telescope").setup {
+            require("telescope").setup({
                 defaults = {
                     mappings = {
                         i = {
                             ["<leader>f"] = actions.close,
+                            ["<leader>g"] = actions.close,
+                            ["<leader>b"] = actions.close,
+                            ["<leader>h"] = actions.close,
+                            ["<leader>m"] = actions.close,
                             ["<leader>e"] = actions.close
                         },
                         n = {
                             ["<leader>f"] = actions.close,
+                            ["<leader>g"] = actions.close,
+                            ["<leader>b"] = actions.close,
+                            ["<leader>h"] = actions.close,
+                            ["<leader>m"] = actions.close,
                             ["<leader>e"] = actions.close,
 
                             ["<leader>ov"] = actions.select_vertical,
@@ -50,17 +66,21 @@ return require("packer").startup(function(use)
                         }
                     }
                 }
-            }
-        end
-    }
+            })
 
-    use {
+            vim.keymap.set('n', "<leader>f", ":Telescope find_files<cr>", { noremap = true })
+            vim.keymap.set('n', "<leader>g", ":Telescope live_grep<cr>", { noremap = true })
+            vim.keymap.set('n', "<leader>b", ":Telescope buffers<cr>", { noremap = true })
+            vim.keymap.set('n', "<leader>h", ":Telescope help_tags<cr>", { noremap = true })
+            vim.keymap.set('n', "<leader>m", ":Telescope man_pages<cr>", { noremap = true })
+        end
+    },
+    {
         "nvim-telescope/telescope-file-browser.nvim",
-        requires = { {
-            "nvim-lua/plenary.nvim"
-        }, {
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons"
-        }
         },
         config = function()
             require("telescope").setup {
@@ -70,24 +90,16 @@ return require("packer").startup(function(use)
                     }
                 }
             }
-            require("telescope").load_extension "file_browser"
-        end
-    }
 
-    use {
-        "akinsho/toggleterm.nvim", tag = '*',
-        config = function()
-            require("toggleterm").setup {
-                open_mapping = [[<leader>t]],
-                direction = "float",
-                autochdir = true,
-            }
-        end
-    }
+            require("telescope").load_extension("file_browser")
 
-    use {
+            vim.keymap.set('n', "<leader>e", ":Telescope file_browser path=%:p:h<CR>", { noremap = true })
+            vim.keymap.set('n', "<leader>E", ":Telescope file_browser<CR>", { noremap = true })
+        end
+    },
+    {
         "neovim/nvim-lspconfig",
-        requires = {
+        dependencies = {
             "hrsh7th/nvim-cmp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
@@ -97,8 +109,8 @@ return require("packer").startup(function(use)
             "saadparwaiz1/cmp_luasnip"
         },
         config = function()
-            vim.api.nvim_create_autocmd('LspAttach', {
-                desc = 'LSP actions',
+            vim.api.nvim_create_autocmd("LspAttach", {
+                desc = "LSP actions",
                 callback = function()
                     local bufmap = function(mode, lhs, rhs)
                         local opts = { buffer = true }
@@ -106,41 +118,41 @@ return require("packer").startup(function(use)
                     end
 
                     -- Displays hover information about the symbol under the cursor
-                    bufmap('n', '<leader>s', '<cmd>lua vim.lsp.buf.hover()<cr>')
+                    bufmap('n', "<leader>s", "<cmd>lua vim.lsp.buf.hover()<cr>")
 
                     -- Jump to the definition
-                    bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
+                    bufmap('n', "<leader>j", "<cmd>lua vim.lsp.buf.definition()<cr>")
 
                     -- Jump to declaration
-                    bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
-
-                    -- Lists all the implementations for the symbol under the cursor
-                    bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-
-                    -- Jumps to the definition of the type symbol
-                    bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
-
-                    -- Lists all the references
-                    bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
-
-                    -- Displays a function's signature information
-                    bufmap('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
-
-                    -- Renames all references to the symbol under the cursor
-                    bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
-
-                    -- Selects a code action available at the current cursor position
-                    bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-                    bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+                    bufmap('n', '<leader>J', '<cmd>lua vim.lsp.buf.declaration()<cr>')
 
                     -- Show diagnostics in a floating window
-                    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+                    bufmap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<cr>')
+
+                    -- Lists all the references
+                    -- bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
+
+                    -- Renames all references to the symbol under the cursor
+                    -- bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
 
                     -- Move to the previous diagnostic
-                    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+                    -- bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
 
                     -- Move to the next diagnostic
-                    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+                    -- bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+
+                    -- Lists all the implementations for the symbol under the cursor
+                    -- bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+
+                    -- Jumps to the definition of the type symbol
+                    -- bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+
+                    -- Displays a function's signature information
+                    -- bufmap('n', '<leader>S', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+
+                    -- Selects a code action available at the current cursor position
+                    -- bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+                    -- bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
                 end
             })
             local lspconfig = require("lspconfig")
@@ -155,11 +167,8 @@ return require("packer").startup(function(use)
 
             lspconfig.clangd.setup({})
             lspconfig.cmake.setup({})
-            lspconfig.pylsp.setup({})
             lspconfig.lua_ls.setup({})
             lspconfig.ocamllsp.setup({})
-
-            require('luasnip.loaders.from_vscode').lazy_load()
 
             local cmp = require('cmp')
             local luasnip = require('luasnip')
@@ -175,8 +184,8 @@ return require("packer").startup(function(use)
                 sources = {
                     { name = 'path' },
                     { name = 'nvim_lsp', keyword_length = 1 },
-                    { name = 'buffer',   keyword_length = 3 },
                     { name = 'luasnip',  keyword_length = 2 },
+                    { name = 'buffer',   keyword_length = 3 },
                 },
                 window = {
                     documentation = cmp.config.window.bordered()
@@ -196,35 +205,19 @@ return require("packer").startup(function(use)
                     end,
                 },
                 mapping = {
-                    ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
-                    ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+                    -- ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
+                    -- ['<Down>'] = cmp.mapping.select_next_item(select_opts),
 
-                    ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
-                    ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
+                    -- ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
+                    -- ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
 
-                    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+                    -- ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+                    -- ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
-                    ['<C-e>'] = cmp.mapping.abort(),
-                    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-                    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+                    -- ['<C-e>'] = cmp.mapping.abort(),
+                    -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
 
-                    ['<C-f>'] = cmp.mapping(function(fallback)
-                        if luasnip.jumpable(1) then
-                            luasnip.jump(1)
-                        else
-                            fallback()
-                        end
-                    end, { 'i', 's' }),
-
-                    ['<C-b>'] = cmp.mapping(function(fallback)
-                        if luasnip.jumpable(-1) then
-                            luasnip.jump(-1)
-                        else
-                            fallback()
-                        end
-                    end, { 'i', 's' }),
-
+                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
                     ["<Tab>"] = cmp.mapping(
                         function(fallback)
                             if cmp.visible() then
@@ -237,6 +230,7 @@ return require("packer").startup(function(use)
                         end,
                         { 'i', 's' }
                     ),
+
                     ["<S-Tab>"] = cmp.mapping(
                         function(fallback)
                             if cmp.visible() then
@@ -252,17 +246,33 @@ return require("packer").startup(function(use)
                 },
             })
         end
-    }
-
-    use {
-        "folke/zen-mode.nvim"
-    }
-
-    use {
-        "EdenEast/nightfox.nvim",
-
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        version = '"*',
         config = function()
+            require("toggleterm").setup({
+                open_mapping = [[<leader>t]],
+                direction = "float",
+                autochdir = true,
+            })
+
+            vim.api.nvim_set_keymap('t', "kj", [[<C-\><C-n>]], { noremap = true, silent = true })
+        end
+    },
+    {
+        "folke/zen-mode.nvim",
+        config = function()
+            vim.keymap.set('n', "<leader>z", ":ZenMode<cr>", { silent = true, noremap = true })
+        end
+
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        config = function()
+            require("nightfox").setup({ options = { transparent = true } })
+
             vim.cmd("colorscheme carbonfox")
         end
     }
-end)
+})

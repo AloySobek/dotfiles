@@ -23,14 +23,3 @@ vim.keymap.set('n', "<leader>p", '"+p', { noremap = true })
 vim.keymap.set('n', "<leader>P", '"+P', { noremap = true })
 
 vim.keymap.set('n', "<leader>r", ":%s/\\<<C-r><C-w>\\>//g<left><left>", { noremap = true })
-
-vim.keymap.set('n', "<leader>z", ":ZenMode<cr>", { silent = true, noremap = true })
-
-vim.keymap.set('n', "<leader>ff", ":Telescope find_files<cr>", { noremap = true })
-vim.keymap.set('n', "<leader>fg", ":Telescope live_grep<cr>", { noremap = true })
-vim.keymap.set('n', "<leader>fb", ":Telescope buffers<cr>", { noremap = true })
-vim.keymap.set('n', "<leader>fh", ":Telescope help_tags<cr>", { noremap = true })
-vim.keymap.set('n', "<leader>fm", ":Telescope man_pages<cr>", { noremap = true })
-
-vim.keymap.set('n', "<leader>e", ":Telescope file_browser path=%:p:h<CR>", { noremap = true })
-vim.keymap.set('n', "<leader>E", ":Telescope file_browser<CR>", { noremap = true })
