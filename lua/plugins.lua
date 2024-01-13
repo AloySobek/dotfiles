@@ -19,7 +19,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require "nvim-treesitter.configs".setup({
-                ensure_installed = { "c", "lua", "query", "vim", "vimdoc", "cpp", "ocaml" },
+                ensure_installed = { 'c', "lua", "query", "vim", "vimdoc", "cpp", "ocaml", "go" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
@@ -68,11 +68,11 @@ require("lazy").setup({
                 }
             })
 
-            vim.keymap.set('n', "<leader>f", ":Telescope find_files<cr>", { noremap = true })
-            vim.keymap.set('n', "<leader>g", ":Telescope live_grep<cr>", { noremap = true })
-            vim.keymap.set('n', "<leader>b", ":Telescope buffers<cr>", { noremap = true })
-            vim.keymap.set('n', "<leader>h", ":Telescope help_tags<cr>", { noremap = true })
-            vim.keymap.set('n', "<leader>m", ":Telescope man_pages<cr>", { noremap = true })
+            vim.keymap.set('n', "<leader>f", ":Telescope find_files<cr>", { noremap = true, silent = true })
+            vim.keymap.set('n', "<leader>g", ":Telescope live_grep<cr>", { noremap = true, silent = true })
+            vim.keymap.set('n', "<leader>b", ":Telescope buffers<cr>", { noremap = true, silent = true })
+            vim.keymap.set('n', "<leader>h", ":Telescope help_tags<cr>", { noremap = true, silent = true })
+            vim.keymap.set('n', "<leader>m", ":Telescope man_pages<cr>", { noremap = true, silent = true })
         end
     },
     {
@@ -93,8 +93,8 @@ require("lazy").setup({
 
             require("telescope").load_extension("file_browser")
 
-            vim.keymap.set('n', "<leader>e", ":Telescope file_browser path=%:p:h<CR>", { noremap = true })
-            vim.keymap.set('n', "<leader>E", ":Telescope file_browser<CR>", { noremap = true })
+            vim.keymap.set('n', "<leader>e", ":Telescope file_browser path=%:p:h<CR>", { noremap = true, silent = true })
+            vim.keymap.set('n', "<leader>E", ":Telescope file_browser<CR>", { noremap = true, silent = true })
         end
     },
     {
@@ -124,10 +124,10 @@ require("lazy").setup({
                     bufmap('n', "<leader>j", "<cmd>lua vim.lsp.buf.definition()<cr>")
 
                     -- Jump to declaration
-                    bufmap('n', '<leader>J', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+                    bufmap('n', "<leader>J", "<cmd>lua vim.lsp.buf.declaration()<cr>")
 
                     -- Show diagnostics in a floating window
-                    bufmap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<cr>')
+                    bufmap('n', "<leader>d", "<cmd>lua vim.diagnostic.open_float()<cr>")
 
                     -- Lists all the references
                     -- bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
@@ -169,9 +169,10 @@ require("lazy").setup({
             lspconfig.cmake.setup({})
             lspconfig.lua_ls.setup({})
             lspconfig.ocamllsp.setup({})
+            lspconfig.gopls.setup({})
 
-            local cmp = require('cmp')
-            local luasnip = require('luasnip')
+            local cmp = require("cmp")
+            local luasnip = require("luasnip")
 
             local select_opts = { behavior = cmp.SelectBehavior.Select }
 
@@ -182,16 +183,16 @@ require("lazy").setup({
                     end
                 },
                 sources = {
-                    { name = 'path' },
-                    { name = 'nvim_lsp', keyword_length = 1 },
-                    { name = 'luasnip',  keyword_length = 2 },
-                    { name = 'buffer',   keyword_length = 3 },
+                    { name = "path" },
+                    { name = "nvim_lsp", keyword_length = 1 },
+                    { name = "luasnip",  keyword_length = 2 },
+                    { name = "buffer",   keyword_length = 3 },
                 },
                 window = {
                     documentation = cmp.config.window.bordered()
                 },
                 formatting = {
-                    fields = { 'menu', 'abbr', 'kind' },
+                    fields = { "menu", "abbr", "kind" },
                     format = function(entry, item)
                         local menu_icon = {
                             nvim_lsp = 'λ',
@@ -249,7 +250,7 @@ require("lazy").setup({
     },
     {
         "akinsho/toggleterm.nvim",
-        version = '"*',
+        version = '*',
         config = function()
             require("toggleterm").setup({
                 open_mapping = [[<leader>t]],
@@ -263,7 +264,7 @@ require("lazy").setup({
     {
         "folke/zen-mode.nvim",
         config = function()
-            vim.keymap.set('n', "<leader>z", ":ZenMode<cr>", { silent = true, noremap = true })
+            vim.keymap.set('n', "<leader>z", ":ZenMode<cr>", { noremap = true, silent = true })
         end
 
     },
