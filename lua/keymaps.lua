@@ -22,6 +22,4 @@ vim.keymap.set('v', "<leader>P", '"+P', { noremap = true, silent = true })
 vim.keymap.set('n', "<leader>p", '"+p', { noremap = true, silent = true })
 vim.keymap.set('n', "<leader>P", '"+P', { noremap = true, silent = true })
 
-vim.keymap.set('n', "<leader>r", ":%s/\\<<C-r><C-w>\\>//g<left><left>", { noremap = true, silent = true })
-
 vim.keymap.set('n', "<BS>", "<C-6>", { noremap = true, silent = true })
