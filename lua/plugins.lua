@@ -19,7 +19,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require "nvim-treesitter.configs".setup({
-                ensure_installed = { 'c', "lua", "query", "vim", "vimdoc", "cpp", "ocaml", "go" },
+                ensure_installed = { "c", "lua", "query", "vim", "vimdoc", "cpp", "ocaml", "go", "python" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
@@ -73,28 +73,6 @@ require("lazy").setup({
             vim.keymap.set('n', "<leader>b", ":Telescope buffers<cr>", { noremap = true, silent = true })
             vim.keymap.set('n', "<leader>h", ":Telescope help_tags<cr>", { noremap = true, silent = true })
             vim.keymap.set('n', "<leader>m", ":Telescope man_pages<cr>", { noremap = true, silent = true })
-        end
-    },
-    {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons"
-        },
-        config = function()
-            require("telescope").setup {
-                extensions = {
-                    file_browser = {
-                        hijack_netrw = true
-                    }
-                }
-            }
-
-            require("telescope").load_extension("file_browser")
-
-            vim.keymap.set('n', "<leader>e", ":Telescope file_browser path=%:p:h<CR>", { noremap = true, silent = true })
-            vim.keymap.set('n', "<leader>E", ":Telescope file_browser<CR>", { noremap = true, silent = true })
         end
     },
     {
@@ -170,11 +148,12 @@ require("lazy").setup({
             lspconfig.lua_ls.setup({})
             lspconfig.ocamllsp.setup({})
             lspconfig.gopls.setup({})
+            lspconfig.pyright.setup({})
 
             local cmp = require("cmp")
             local luasnip = require("luasnip")
 
-            local select_opts = { behavior = cmp.SelectBehavior.Select }
+            -- local select_opts = { behavior = cmp.SelectBehavior.Select }
 
             cmp.setup({
                 snippet = {
