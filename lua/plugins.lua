@@ -228,24 +228,10 @@ require("lazy").setup({
         end
     },
     {
-        "akinsho/toggleterm.nvim",
-        version = '*',
-        config = function()
-            require("toggleterm").setup({
-                open_mapping = [[<leader>t]],
-                direction = "float",
-                autochdir = true,
-            })
-
-            vim.api.nvim_set_keymap('t', "kj", [[<C-\><C-n>]], { noremap = true, silent = true })
-        end
-    },
-    {
         "folke/zen-mode.nvim",
         config = function()
             vim.keymap.set('n', "<leader>z", ":ZenMode<cr>", { noremap = true, silent = true })
         end
-
     },
     {
         "EdenEast/nightfox.nvim",
