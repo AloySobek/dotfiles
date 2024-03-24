@@ -21,5 +21,3 @@ vim.keymap.set('v', "<leader>p", '"+p', { noremap = true, silent = true })
 vim.keymap.set('v', "<leader>P", '"+P', { noremap = true, silent = true })
 vim.keymap.set('n', "<leader>p", '"+p', { noremap = true, silent = true })
 vim.keymap.set('n', "<leader>P", '"+P', { noremap = true, silent = true })
-
-vim.keymap.set('n', "<BS>", "<C-6>", { noremap = true, silent = true })
