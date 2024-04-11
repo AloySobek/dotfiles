@@ -21,3 +21,5 @@ vim.keymap.set('v', "<leader>p", '"+p', { noremap = true, silent = true })
 vim.keymap.set('v', "<leader>P", '"+P', { noremap = true, silent = true })
 vim.keymap.set('n', "<leader>p", '"+p', { noremap = true, silent = true })
 vim.keymap.set('n', "<leader>P", '"+P', { noremap = true, silent = true })
+
+vim.keymap.set('n', "<leader>e", ":tab :term cmake -B build && cmake --build build && ./build/", { noremap = true })
