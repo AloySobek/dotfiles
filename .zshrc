@@ -1,4 +1,5 @@
 autoload -Uz compinit; compinit
+autoload -Uz history-search-end
 autoload -Uz vcs_info;
 
 zstyle ':vcs_info:*' enable git 
@@ -24,8 +25,11 @@ setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt PROMPT_SUBST
 
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
 
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=65536
