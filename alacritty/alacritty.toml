@@ -3,10 +3,6 @@ decorations = "None"
 startup_mode  = "Fullscreen" 
 
 [font]
-normal = {family = "MesloLGS NF", style = "Regular"}
-bold = {family = "MesloLGS NF", style = "Bold"}
-italic = {family = "MesloLGS NF", style = "Italic"}
-bold_italic = {family = "MesloLGS NF", style = "Bold Italic"}
 size = 14
 
 # Colors (iTerm 2 default theme)
