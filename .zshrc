@@ -28,8 +28,8 @@ setopt PROMPT_SUBST
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
+bindkey $key[Up] history-beginning-search-backward-end
+bindkey $key[Down] history-beginning-search-forward-end
 
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=65536
@@ -40,14 +40,14 @@ PROMPT='%F{yellow}%~%f ${vcs_info_msg_0_}$ '
 alias ls='ls --color=auto'
 alias ll='ls -al'
 
-source /Users/aloysobek/.docker/init-zsh.sh || true # Added by Docker Desktop
-
-# opam configuration
-[[ ! -r /Users/aloysobek/.opam/opam-init/init.zsh ]] || source /Users/aloysobek/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-export PATH=/Users/aloysobek/go/bin:$PATH
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# source /Users/aloysobek/.docker/init-zsh.sh || true # Added by Docker Desktop
+# 
+# # opam configuration
+# [[ ! -r /Users/aloysobek/.opam/opam-init/init.zsh ]] || source /Users/aloysobek/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# 
+# export PATH=/Users/aloysobek/go/bin:$PATH
+# 
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
