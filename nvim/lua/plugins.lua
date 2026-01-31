@@ -19,7 +19,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             require "nvim-treesitter.configs".setup({
-                ensure_installed = { "c", "lua", "query", "vim", "vimdoc", "cpp", "ocaml", "go", "python", "asm" },
+                ensure_installed = { "c", "cpp", "asm", "lua", "query", "vim", "vimdoc" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
