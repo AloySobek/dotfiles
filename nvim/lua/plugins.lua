@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     })
 end
@@ -16,16 +16,18 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "master",
+        lazy = false,
         build = ":TSUpdate",
         config = function()
-            require "nvim-treesitter.configs".setup({
+            require("nvim-treesitter.configs").setup({
                 ensure_installed = { "c", "cpp", "asm", "lua", "query", "vim", "vimdoc" },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
-                }
+                },
             })
-        end
+        end,
     },
     {
         "nvim-telescope/telescope.nvim",
@@ -133,22 +135,24 @@ require("lazy").setup({
                     -- bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
                 end
             })
-            local lspconfig = require("lspconfig")
 
-            local lsp_defaults = lspconfig.util.default_config
+            vim.api.nvim_create_autocmd("LspAttach", {
+                desc = "LSP actions",
+                callback = function(args)
+                    local opts = { buffer = args.buf, silent = true }
+                    vim.keymap.set('n', "<leader>s", vim.lsp.buf.hover, opts)
+                    vim.keymap.set('n', "<leader>j", vim.lsp.buf.definition, opts)
+                    vim.keymap.set('n', "<leader>J", vim.lsp.buf.declaration, opts)
+                    vim.keymap.set('n', "<leader>d", vim.diagnostic.open_float, opts)
+                end
+            })
 
-            lsp_defaults.capabilities = vim.tbl_deep_extend(
-                "force",
-                lsp_defaults.capabilities,
-                require("cmp_nvim_lsp").default_capabilities()
-            )
+            -- Capabilities for nvim-cmp, applied to ALL servers via '*'
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            vim.lsp.config('*', { capabilities = capabilities })
 
-            lspconfig.clangd.setup({})
-            lspconfig.cmake.setup({})
-            lspconfig.lua_ls.setup({})
-            lspconfig.ocamllsp.setup({})
-            lspconfig.gopls.setup({})
-            lspconfig.pyright.setup({})
+            -- Enable the server configs (provided by nvim-lspconfig)
+            vim.lsp.enable({ 'clangd', 'cmake', 'lua_ls', 'ocamllsp', 'gopls', 'pyright' })
 
             local cmp = require("cmp")
             local luasnip = require("luasnip")
